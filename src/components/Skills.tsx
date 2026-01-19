@@ -2,9 +2,10 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = {
-  "Frontend": ["React", "TypeScript", "Next.js", "TailwindCSS", "Framer Motion"],
-  "Backend": ["Node.js", "Python", "PostgreSQL", "Redis", "GraphQL"],
-  "Tools": ["Git", "Docker", "AWS", "Figma", "Vercel"],
+  "Languages & Frameworks": ["Python", "C++", "FastAPI", "Django", "Flask", "REST APIs"],
+  "Cloud & Data": ["GCP", "BigQuery", "Cloud SQL", "Dataflow", "Pub/Sub", "Apache Beam"],
+  "Databases & Tools": ["PostgreSQL", "Redis", "Elasticsearch", "Docker", "Git", "PyTest"],
+  "Security": ["JWT Authentication", "RBAC", "Secure API Design", "OAuth"],
 };
 
 const Skills = () => {
@@ -33,7 +34,7 @@ const Skills = () => {
             Technologies I work with
           </motion.h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {Object.entries(skills).map(([category, items], categoryIndex) => (
               <motion.div
                 key={category}
@@ -43,20 +44,19 @@ const Skills = () => {
                 className="p-6 rounded-xl bg-card border border-border"
               >
                 <h3 className="text-lg font-semibold mb-4 text-primary">{category}</h3>
-                <ul className="space-y-3">
+                <div className="flex flex-wrap gap-2">
                   {items.map((skill, skillIndex) => (
-                    <motion.li
+                    <motion.span
                       key={skill}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ delay: 0.3 + categoryIndex * 0.1 + skillIndex * 0.05, duration: 0.4 }}
-                      className="flex items-center gap-3 text-muted-foreground"
+                      className="px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {skill}
-                    </motion.li>
+                    </motion.span>
                   ))}
-                </ul>
+                </div>
               </motion.div>
             ))}
           </div>

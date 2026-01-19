@@ -33,7 +33,7 @@ const Hero = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight"
           >
-            Alex <span className="text-gradient">Morgan</span>
+            Yash <span className="text-gradient">Rai</span>
           </motion.h1>
           
           <motion.p
@@ -42,7 +42,7 @@ const Hero = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-8 leading-relaxed"
           >
-            Full-stack developer crafting digital experiences with clean code and thoughtful design.
+            Backend Engineer with 4+ years of experience building cloud-native APIs, secure systems, and data-intensive pipelines on GCP.
           </motion.p>
           
           <motion.div
@@ -51,12 +51,14 @@ const Hero = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="flex flex-wrap gap-4 mb-12"
           >
-            <Button variant="hero" size="lg">
-              View Projects
-              <ArrowDown className="ml-2 h-4 w-4" />
+            <Button variant="hero" size="lg" asChild>
+              <a href="#projects">
+                View Projects
+                <ArrowDown className="ml-2 h-4 w-4" />
+              </a>
             </Button>
-            <Button variant="heroOutline" size="lg">
-              Get in Touch
+            <Button variant="heroOutline" size="lg" asChild>
+              <a href="#contact">Get in Touch</a>
             </Button>
           </motion.div>
           
@@ -67,7 +69,7 @@ const Hero = () => {
             className="flex gap-4"
           >
             <a 
-              href="https://github.com" 
+              href="https://github.com/yashraizb" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
@@ -75,7 +77,7 @@ const Hero = () => {
               <Github className="h-5 w-5" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/yashrai0202" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
@@ -83,7 +85,7 @@ const Hero = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a 
-              href="mailto:hello@example.com"
+              href="mailto:yash.rai.zb0202@gmail.com"
               className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
             >
               <Mail className="h-5 w-5" />
