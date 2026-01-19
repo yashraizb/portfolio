@@ -6,6 +6,7 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -33,7 +34,7 @@ const Navbar = () => {
       <div className="container px-6">
         <div className="flex items-center justify-between h-16">
           <a href="#" className="text-xl font-bold text-gradient">
-            AM
+            YR
           </a>
           
           {/* Desktop menu */}

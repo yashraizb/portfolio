@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Award, Briefcase, GraduationCap } from "lucide-react";
 
 const About = () => {
   const ref = useRef(null);
@@ -36,18 +37,19 @@ const About = () => {
               className="md:col-span-2 space-y-4 text-muted-foreground"
             >
               <p className="text-lg leading-relaxed">
-                I'm a passionate developer with 5+ years of experience building web applications 
-                that are both beautiful and functional. I believe in writing clean, maintainable 
-                code that stands the test of time.
+                I'm a Backend Engineer with 4+ years of experience building cloud-native APIs, 
+                secure backend systems, and data-intensive pipelines. I specialize in Python 
+                technologies like FastAPI, Django, and Flask, deployed on Google Cloud Platform.
               </p>
               <p className="text-lg leading-relaxed">
-                My journey started with curiosity about how websites work, and has evolved into 
-                a deep love for creating digital experiences that make a difference. I specialize 
-                in React, TypeScript, and modern web technologies.
+                I've delivered significant performance improvements including a 24× boost in 
+                processing speed and 70% reduction in database load. I have a strong track 
+                record of owning backend systems end-to-end in remote, async, and fast-paced environments.
               </p>
               <p className="text-lg leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, contributing to 
-                open-source projects, or sharing knowledge with the developer community.
+                My expertise includes designing JWT-based authentication, RBAC systems, 
+                microservices architecture, and building scalable data pipelines using 
+                Apache Beam on Google Cloud Dataflow.
               </p>
             </motion.div>
             
@@ -55,15 +57,32 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="relative"
+              className="space-y-4"
             >
-              <div className="aspect-square rounded-lg bg-gradient-to-br from-muted to-card border border-border overflow-hidden relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-6xl">👨‍💻</span>
+              <div className="p-4 rounded-lg bg-card border border-border">
+                <div className="flex items-center gap-3 mb-2">
+                  <Briefcase className="text-primary" size={20} />
+                  <span className="font-semibold">Experience</span>
                 </div>
+                <p className="text-muted-foreground text-sm">4+ Years</p>
               </div>
-              <div className="absolute -inset-1 rounded-lg border-2 border-primary/30 -z-10 translate-x-3 translate-y-3" />
+              
+              <div className="p-4 rounded-lg bg-card border border-border">
+                <div className="flex items-center gap-3 mb-2">
+                  <GraduationCap className="text-primary" size={20} />
+                  <span className="font-semibold">Education</span>
+                </div>
+                <p className="text-muted-foreground text-sm">B.Tech in Computer Science</p>
+                <p className="text-muted-foreground text-xs">CGPA: 8.11</p>
+              </div>
+              
+              <div className="p-4 rounded-lg bg-card border border-border">
+                <div className="flex items-center gap-3 mb-2">
+                  <Award className="text-primary" size={20} />
+                  <span className="font-semibold">Certification</span>
+                </div>
+                <p className="text-muted-foreground text-sm">GCP Associate Cloud Engineer</p>
+              </div>
             </motion.div>
           </div>
         </div>
