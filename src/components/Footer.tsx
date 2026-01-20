@@ -5,13 +5,10 @@ const Footer = () => {
     <footer className="py-8 border-t border-border">
       <div className="container px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground font-mono">
-            Designed & Built by Alex Morgan
-          </p>
           
           <div className="flex items-center gap-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/yashraizb" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
@@ -19,23 +16,23 @@ const Footer = () => {
               <Github className="h-5 w-5" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/yashrai0202" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a 
+            {/* <a 
               href="https://twitter.com" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               <Twitter className="h-5 w-5" />
-            </a>
+            </a> */}
             <a 
-              href="mailto:hello@example.com"
+              href="mailto:yash.rai.zb0202@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               <Mail className="h-5 w-5" />
