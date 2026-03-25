@@ -73,3 +73,35 @@
     font-family: 'JetBrains Mono', monospace;
   }
 }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes meteor-fall {
+  0% {
+    transform: rotate(-45deg) translateY(-150px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translateY(120vh);
+    opacity: 0;
+  }
+}
+
+.meteor {
+  position: absolute;
+  width: 1px;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, hsl(175 80% 75%));
+  animation: meteor-fall linear infinite;
+  animation-fill-mode: backwards;
+  pointer-events: none;
+}
