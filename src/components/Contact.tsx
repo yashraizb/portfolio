@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, Phone, Github, Linkedin } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -86,13 +87,21 @@ const Contact = () => {
             >
               <Github className="h-5 w-5" />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/yashrai0202" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/yashrai0202"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
             >
               <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="https://leetcode.com/u/yashraizb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
+            >
+              <SiLeetcode className="h-5 w-5" />
             </a>
           </motion.div>
         </div>

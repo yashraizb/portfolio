@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   return (
@@ -31,11 +32,19 @@ const Footer = () => {
             >
               <Twitter className="h-5 w-5" />
             </a> */}
-            <a 
+            <a
               href="mailto:yash.rai.zb0202@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               <Mail className="h-5 w-5" />
+            </a>
+            <a
+              href="https://leetcode.com/u/yashraizb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300"
+            >
+              <SiLeetcode className="h-5 w-5" />
             </a>
           </div>
         </div>

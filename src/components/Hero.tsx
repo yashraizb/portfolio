@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
+import LeetCodeCard from "@/components/hero/LeetCodeCard";
 
 // ── Sequenced typewriter hook ──────────────────────────────────────────────
 function useSequencedTyping(
@@ -57,9 +59,9 @@ const DESCRIPTION =
 
 const Hero = () => {
   const { displayed, activeStep, done } = useSequencedTyping([
-    { text: "Hello, I'm",  charDelay: 65 },
-    { text: "Yash Rai",    charDelay: 95 },
-    { text: DESCRIPTION,   charDelay: 40 },
+    { text: "Hello, I'm",  charDelay: 35 },
+    { text: "Yash Rai",    charDelay: 35 },
+    { text: DESCRIPTION,   charDelay: 10 },
   ]);
 
   // Split name to preserve gradient on "Rai" (starts at index 5)
@@ -68,7 +70,7 @@ const Hero = () => {
   const nameGradient = nameLine.slice(5);     // "Rai" chars typed so far
 
   return (
-    <section className="relative z-[1] min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative z-[1] min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-30"
@@ -76,74 +78,96 @@ const Hero = () => {
       />
 
       <div className="container relative z-10 px-6">
-        <div className="max-w-4xl">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
 
-          {/* Line 1 — greeting */}
-          <p className="font-mono text-primary mb-4 text-sm tracking-wider min-h-[1.25rem]">
-            {displayed[0]}
-            {activeStep === 0 && <Cursor />}
-          </p>
+          {/* Left column — text content */}
+          <div className="lg:col-span-3 max-w-2xl">
 
-          {/* Line 2 — name */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight min-h-[1.2em]">
-            {nameNormal}
-            {nameGradient && (
-              <span className="text-gradient">{nameGradient}</span>
-            )}
-            {activeStep === 1 && <Cursor />}
-          </h1>
+            {/* Line 1 — greeting */}
+            <p className="font-mono text-primary mb-4 text-sm tracking-wider min-h-[1.25rem]">
+              {displayed[0]}
+              {activeStep === 0 && <Cursor />}
+            </p>
 
-          {/* Line 3 — description */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-8 leading-relaxed min-h-[2em]">
-            {displayed[2]}
-            {activeStep === 2 && <Cursor />}
-          </p>
+            {/* Line 2 — name */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight min-h-[1.2em]">
+              {nameNormal}
+              {nameGradient && (
+                <span className="text-gradient">{nameGradient}</span>
+              )}
+              {activeStep === 1 && <Cursor />}
+            </h1>
 
-          {/* Buttons — fade in after all typing done */}
-          <motion.div
-            animate={{ opacity: done ? 1 : 0, y: done ? 0 : 10 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-wrap gap-4 mb-12"
-          >
-            <Button variant="hero" size="lg" asChild>
-              <a href="#projects">
-                View Projects
-                <ArrowDown className="ml-2 h-4 w-4" />
+            {/* Line 3 — description */}
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mb-8 leading-relaxed min-h-[2em]">
+              {displayed[2]}
+              {activeStep === 2 && <Cursor />}
+            </p>
+
+            {/* Buttons — fade in after all typing done */}
+            <motion.div
+              animate={{ opacity: done ? 1 : 0, y: done ? 0 : 10 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="flex flex-wrap gap-4 mb-12"
+            >
+              <Button variant="hero" size="lg" asChild>
+                <a href="#projects">
+                  View Projects
+                  <ArrowDown className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button variant="heroOutline" size="lg" asChild>
+                <a href="#contact">Get in Touch</a>
+              </Button>
+            </motion.div>
+
+            {/* Social links — fade in after buttons */}
+            <motion.div
+              animate={{ opacity: done ? 1 : 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              className="flex gap-4"
+            >
+              <a
+                href="https://github.com/yashraizb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
+              >
+                <Github className="h-5 w-5" />
               </a>
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <a href="#contact">Get in Touch</a>
-            </Button>
-          </motion.div>
+              <a
+                href="https://www.linkedin.com/in/yashrai0202"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:yash.rai.zb0202@gmail.com"
+                className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+              <a
+                href="https://leetcode.com/u/yashraizb/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
+              >
+                <SiLeetcode className="h-5 w-5" />
+              </a>
+            </motion.div>
 
-          {/* Social links — fade in after buttons */}
+          </div>
+
+          {/* Right column — LeetCode stats card */}
           <motion.div
             animate={{ opacity: done ? 1 : 0 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="flex gap-4"
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            className="lg:col-span-2 flex justify-center"
           >
-            <a
-              href="https://github.com/yashraizb"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/yashrai0202"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:yash.rai.zb0202@gmail.com"
-              className="p-3 rounded-full border border-border hover:border-primary hover:text-primary transition-colors duration-300"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
+            <LeetCodeCard username="yashraizb" />
           </motion.div>
 
         </div>
